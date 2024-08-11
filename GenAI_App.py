@@ -39,7 +39,7 @@ if use_case == "Home":
 
 elif use_case == "Data Model to SQL":
     # Configure Google Generative AI with your API key
-    # GOOGLE_API_KEY = 'AIzaSyBWLdrs8lH5c_Lmc-OkDQ02dxF2L30twdg'
+    
     # Configure Google Generative AI with your API key
     genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
 
@@ -166,7 +166,7 @@ elif use_case == "Text to SQL":
         submit = st.button("Get Response")
 
     # Google API key configuration
-    # GOOGLE_API_KEY = 'AIzaSyBWLdrs8lH5c_Lmc-OkDQ02dxF2L30twdg'
+    
     # Configure Google Generative AI with your API key
     genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
     model = genai.GenerativeModel('gemini-pro')
@@ -262,7 +262,7 @@ elif use_case == "SQL Script Upload":
     submit = st.button("Get AI-response")
 
     # Google API key configuration
-    # GOOGLE_API_KEY = 'AIzaSyBWLdrs8lH5c_Lmc-OkDQ02dxF2L30twdg'
+    
     # genai.configure(api_key=GOOGLE_API_KEY)
     genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
     model = genai.GenerativeModel('gemini-pro')
