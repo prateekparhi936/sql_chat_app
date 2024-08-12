@@ -1,9 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
 
-# # Configure Google Generative AI with your API key
-# genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
-
 
 # Configure Streamlit page
 st.set_page_config(page_title='GenAI Web App', page_icon=None)
@@ -98,7 +95,9 @@ elif use_case == "Data Model to SQL":
                     "role": "user",
                     "parts": [
                         gemini_file,
-                        "You are an intelligent system. I am going to provide an Entity relationship diagram. You need to read that diagram and develop a BigQuery script using that. Use temp tables to store the joined table results. In one temp table do not have more than 3 tables joined. Create a separate table to store more than 3 tables join. Subsequently use the temp tables created and form the logic. and make sure to exclude ''' in the beginning and end.",
+                        "You are an intelligent system. I am going to provide an Entity relationship diagram. You need to read that diagram and develop a BigQuery script using that. 
+                        Use temp tables to store the joined table results. In one temp table do not have more than 3 tables joined. 
+                        Create a separate table to store more than 3 tables join. Subsequently use the temp tables created and form the logic. and make sure to exclude ''' in the beginning and end.",
                     ],
                 }
             ]
