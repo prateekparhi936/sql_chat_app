@@ -125,7 +125,7 @@ elif use_case == "Data Model to SQL":
 
     # User input section
     # user_input = st.text_input("Enter your message to the AI:")
-    st.text_area("Ask your question in natural language", height=200, width= 400)
+    st.text_area("Ask your question in natural language", height=200)
     # uploaded_image = st.file_uploader("Or upload an image:", type=["png", "jpg", "jpeg"], key="chat_image_uploader")
 
     if st.button("Send"):
