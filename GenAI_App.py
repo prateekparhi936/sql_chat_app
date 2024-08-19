@@ -143,7 +143,7 @@ elif use_case == "Data Model to SQL":
             st.write(f"**You:** {message['content']}")
         else:
             # st.write(f"**AI:** {message['content']}")
-            st.code(f"**AI:** {message['content']}")
+            st.write(f"**AI:** {message['content']}")
 
 elif use_case == "Text to SQL":
     # Setting web app page name and selecting wide layout (optional)
