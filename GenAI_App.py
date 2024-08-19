@@ -125,7 +125,7 @@ elif use_case == "Data Model to SQL":
 
     # User input section
     # user_input = st.text_input("Enter your message to the AI:")
-    st.text_area("Ask your question in natural language", height=200)
+    user_input = st.text_area("Ask your question in natural language", height=200)
     # uploaded_image = st.file_uploader("Or upload an image:", type=["png", "jpg", "jpeg"], key="chat_image_uploader")
 
     if st.button("Send"):
@@ -143,7 +143,7 @@ elif use_case == "Data Model to SQL":
             st.write(f"**You:** {message['content']}")
         else:
             # st.write(f"**AI:** {message['content']}")
-            st.write(f"**AI:** {message['content']}")
+            st.code(f"**AI:** {message['content']}")
 
 elif use_case == "Text to SQL":
     # Setting web app page name and selecting wide layout (optional)
