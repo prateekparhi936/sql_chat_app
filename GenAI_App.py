@@ -124,7 +124,8 @@ elif use_case == "Data Model to SQL":
         st.session_state.history.append({"role": "assistant", "content": response.parts[0].text})
 
     # User input section
-    user_input = st.text_input("Enter your message to the AI:")
+    # user_input = st.text_input("Enter your message to the AI:")
+    st.text_area("Ask your question in natural language", height=200, width: 400)
     # uploaded_image = st.file_uploader("Or upload an image:", type=["png", "jpg", "jpeg"], key="chat_image_uploader")
 
     if st.button("Send"):
@@ -141,7 +142,8 @@ elif use_case == "Data Model to SQL":
         if message["role"] == "user":
             st.write(f"**You:** {message['content']}")
         else:
-            st.write(f"**AI:** {message['content']}")
+            # st.write(f"**AI:** {message['content']}")
+            st.code(f"**AI:** {message['content']}")
 
 elif use_case == "Text to SQL":
     # Setting web app page name and selecting wide layout (optional)
