@@ -268,12 +268,15 @@ elif use_case == "SQL Script Upload":
 
     # Supportive contexts for the generative model
     supportive_info1 = ["You have been provided with a BigQuery SQL script. "
-                        "Your task is to modify the script based on the user's instructions. "
-                        "The modifications may include fixing syntax errors like missing table keyword, from keyword, select keyword. Do not assume anything and do not give generic answers."
+                        "Your task is to modify the SQL script based on the user's instructions and fix the errors."
+                        "The modifications may include fixing SQL syntax errors like missing table keyword, from keyword, select keyword etc. Do not assume anything and do not give incorrect answers like semicolon is missing when it's actually present already."
                         "Ensure that the updated script is functional and follows BigQuery SQL best practices."
                         "Instructions for the Model:Error Fixing: Identify and correct any syntax errors in the provided SQL script. "
                         "Ensure the script is compatible with BigQuery SQL syntax and functions."
-                        "Validation: Ensure the final script is executable in BigQuery without errors and returns the expected results.Output: Provide the updated SQL script along with brief explanations of the changes made.make sure to exclude ''' in the beginning and end."]
+                        "Below are some example input and output: "
+                        "Example 1: CREATE OR REPLACE GIC_CET AS SELECT * FROM XYZ; Expected Output: This is an incorrect query as its missing TABLE keyword. Correct query: CREATE OR REPLACE TABLE GIC_CET AS SELECT * FROM XYZ"
+                        "Example 2: CREATE OR REPLACE TABLE GIC_CET AS SELECT & FROM XYZ; Expected Output: This is an incorrect query as it has unknown '&' ampersand character. Correct query: CREATE OR REPLACE TABLE GIC_CET AS SELECT * FROM XYZ"                        
+                        "Use the examples above to understand and extend the knowledge for other similar errors like missing FROM keyword etc"
     #supportive_info2 = ["Based on the SQL query code, create an example input dataframe before the SQL query code is applied and the output dataframe after the SQL query is applied."]
     #supportive_info3 = ["Explain the SQL query in detail without any example output."]
 
