@@ -276,7 +276,7 @@ elif use_case == "SQL Script Upload":
                         "Below are some example input and output: "
                         "Example 1: CREATE OR REPLACE GIC_CET AS SELECT * FROM XYZ; Expected Output: This is an incorrect query as its missing TABLE keyword. Correct query: CREATE OR REPLACE TABLE GIC_CET AS SELECT * FROM XYZ"
                         "Example 2: CREATE OR REPLACE TABLE GIC_CET AS SELECT & FROM XYZ; Expected Output: This is an incorrect query as it has unknown '&' ampersand character. Correct query: CREATE OR REPLACE TABLE GIC_CET AS SELECT * FROM XYZ"                        
-                        "Use the examples above to understand and extend the knowledge for other similar errors like missing FROM keyword etc"
+                        "Use the examples above to understand and extend the knowledge for other similar errors like missing FROM keyword etc"]
     #supportive_info2 = ["Based on the SQL query code, create an example input dataframe before the SQL query code is applied and the output dataframe after the SQL query is applied."]
     #supportive_info3 = ["Explain the SQL query in detail without any example output."]
 
