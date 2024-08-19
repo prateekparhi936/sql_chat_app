@@ -67,8 +67,7 @@ elif use_case == "Data Model to SQL":
     }
 
     model = genai.GenerativeModel(
-        # model_name="gemini-1.5-flash",
-        model_name="gemini-1.0-pro",
+        model_name="gemini-1.5-flash",
         generation_config=generation_config,
     )
 
