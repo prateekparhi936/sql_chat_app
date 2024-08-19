@@ -269,13 +269,10 @@ elif use_case == "SQL Script Upload":
     # Supportive contexts for the generative model
     supportive_info1 = ["You have been provided with a BigQuery SQL script. "
                         "Your task is to modify the script based on the user's instructions. "
-                        "The modifications may include fixing syntax errors, optimizing the query for performance, or making contextual changes and additions as specified by the user. "
+                        "The modifications may include fixing syntax errors like missing table keyword, from keyword, select keyword. Do not assume anything and do not give generic answers."
                         "Ensure that the updated script is functional and follows BigQuery SQL best practices."
-                        "nstructions for the Model:Error Fixing: Identify and correct any syntax errors in the provided SQL script. "
+                        "Instructions for the Model:Error Fixing: Identify and correct any syntax errors in the provided SQL script. "
                         "Ensure the script is compatible with BigQuery SQL syntax and functions."
-                        "Optimization: Analyze the query for performance bottlenecks, such as inefficient joins, unnecessary subqueries, or missing indexes. "
-                        "Refactor the code to improve execution speed and resource usage.Contextual Changes: Based on the user's input, make the necessary additions or alterations to the script. "
-                        "This may include adding new fields, applying different filters, or changing aggregation logic."
                         "Validation: Ensure the final script is executable in BigQuery without errors and returns the expected results.Output: Provide the updated SQL script along with brief explanations of the changes made.make sure to exclude ''' in the beginning and end."]
     #supportive_info2 = ["Based on the SQL query code, create an example input dataframe before the SQL query code is applied and the output dataframe after the SQL query is applied."]
     #supportive_info3 = ["Explain the SQL query in detail without any example output."]
